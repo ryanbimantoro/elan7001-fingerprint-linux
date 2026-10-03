@@ -302,6 +302,22 @@ Verified:
     custom libfprint active
     PAM fingerprint enabled
 
+## License & Attribution
+
+The included `patches/elanspi-3104-sigfm.patch` is derived from
+libfprint and adapted from the following community project:
+
+    https://github.com/r4nd3l/elan-3104-fingerprint-linux
+
+The upstream-derived patch is distributed under the GNU Lesser General
+Public License, version 2.1 or later (LGPL-2.1-or-later).
+
+The corresponding license text is included in `LICENSE`.
+
+The kit's custom installer, verification script, documentation, and
+metadata were assembled specifically for the tested ASUS X513EA /
+K513EA configuration described in this repository.
+
 ## Files
 
 ### install.sh
