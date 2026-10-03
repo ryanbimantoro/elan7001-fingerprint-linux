@@ -1,0 +1,15 @@
+# Local/editor files
+*~
+*.swp
+*.swo
+.DS_Store
+
+# Build artifacts
+build/
+*.o
+*.so
+*.a
+
+# Temporary files
+*.log
+*.bak

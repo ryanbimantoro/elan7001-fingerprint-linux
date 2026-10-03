@@ -1,0 +1,153 @@
+FINGERPRINT KIT v1
+==================
+
+TARGET HARDWARE
+---------------
+Model:
+  ASUS VivoBook X513EA / K513EA
+
+ACPI fingerprint:
+  ELAN7001
+
+Fingerprint companion HID:
+  VID 04F3
+  PID 3104
+
+Fingerprint sensor:
+  ELAN7001 / eFSA80SC
+  SPI
+  80x80
+
+KNOWN WORKING SYSTEM
+--------------------
+OS:
+  Ubuntu 26.04.1 LTS
+
+Architecture:
+  x86_64
+
+Kernel tested:
+  7.0.0-34-generic
+
+BIOS:
+  X513EA.318
+
+LIBFPRINT PACKAGES
+------------------
+fprintd:
+  1.94.5-4
+
+libfprint-2-2:
+  1:1.95.1+tod1-0ubuntu2
+
+libfprint-2-tod1:
+  1:1.95.1+tod1-0ubuntu2
+
+libpam-fprintd:
+  1.94.5-4
+
+CUSTOM LIBFPRINT
+----------------
+Base repository:
+  https://github.com/goodix-fp-linux-dev/libfprint.git
+
+Base commit:
+  07306bbc9256942595e31fb0f407b364ffa24d07
+
+Community repository:
+  https://github.com/r4nd3l/elan-3104-fingerprint-linux.git
+
+Community repository HEAD tested:
+  a8b8af8e0100f5bfb4dbee87b60bfcfb887b0af6
+
+Patch:
+  patches/elanspi-3104-sigfm.patch
+
+Patch SHA-256:
+  8448fa69bcfebfe8e3b98fd6382d96a7a8e5092707c51d055fb31cc62aa66e8c
+
+BUILD CONFIGURATION
+-------------------
+prefix:
+  /usr/local
+
+libdir:
+  lib/x86_64-linux-gnu
+
+drivers:
+  elanspi
+
+doc:
+  false
+
+udev_rules:
+  disabled
+
+udev_hwdb:
+  disabled
+
+BUILD TOOLS
+-----------
+GCC:
+  15.2.0
+
+Meson:
+  1.10.1
+
+Ninja:
+  1.13.2
+
+pkg-config:
+  2.5.1
+
+DEPENDENCIES TESTED
+-------------------
+glib-2.0:
+  2.88.0
+
+gio-2.0:
+  2.88.0
+
+gudev-1.0:
+  238
+
+gusb:
+  0.4.9
+
+opencv4:
+  4.10.0
+
+RUNTIME CONFIGURATION
+---------------------
+SPI device:
+  /dev/spidev0.0
+
+SPI buffer:
+  32768
+
+modprobe configuration:
+  /etc/modprobe.d/elan-spidev.conf
+
+Custom library:
+  /usr/local/lib/x86_64-linux-gnu/libfprint-2.so.2.0.0
+
+PAM:
+  pam_fprintd enabled through pam-auth-update
+
+VERIFIED RESULT
+---------------
+fprintd detects:
+  ElanTech Embedded Fingerprint Sensor (swipe)
+
+Enrolled fingerprints on reference machine:
+  right-middle-finger
+  right-index-finger
+
+IMPORTANT
+---------
+Fingerprint enrollment data is NOT part of this kit.
+
+On another machine, the user must enroll their own fingerprints.
+
+The kit is intended for hardware matching:
+  ELAN7001 + HID 04F3:3104
